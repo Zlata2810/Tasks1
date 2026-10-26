@@ -19,12 +19,34 @@
     </div>
 
     <script>
-        /*
+         /*
         Задание:
         Сделайте так, чтобы при нажатии на клавишу G фон div#colorOutput становился зеленым.
         при нажатии на клавишу R фон div#colorOutput становился красным, 
         а при нажатии на клавишу B фон div#colorOutput становился синим.
         */
+       let divs = document.querySelectorAll("div");
+
+        document.addEventListener("keydown", function (e) {
+           
+            if (e.ctrlKey && (e.code === "KeyA" || e.key === "a" || e.key === "A" || e.key === "ф" || e.key === "Ф")) {
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.border = "3px solid red";
+                }
+            }
+
+            switch (e.key) {
+                case "1":
+                    divs[0].style.border = "3px solid red";
+                    break;
+                case "2":
+                    divs[1].style.border = "3px solid red";
+                    break;
+                case "3":
+                    divs[2].style.border = "3px solid red";
+                    break;
+            }
+        });
     </script>
 </body>
 
